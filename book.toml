@@ -6,11 +6,14 @@ src = "src"
 title = "Steven's mdbook katex template"
 
 [build]
-build-dir = "."
+build-dir = "html"
 
 [output.html]
 git-repository-url = "https://github.com/SichangHe/mdbook_katex_template"
 
-[output.katex]
-
 [preprocessor.katex]
+after = ["links"]
+include-src = true
+
+[preprocessor.toc]
+before = ["katex"]
