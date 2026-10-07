@@ -1,7 +1,6 @@
 [book]
 authors = ["Steven Hé (Sīchàng)"]
 language = "en"
-multilingual = false
 src = "src"
 title = "Steven's mdbook katex template"
 
@@ -14,6 +13,3 @@ git-repository-url = "https://github.com/SichangHe/mdbook_katex_template"
 [preprocessor.katex]
 after = ["links"]
 include-src = true
-
-[preprocessor.toc]
-before = ["katex"]

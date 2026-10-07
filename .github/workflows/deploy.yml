@@ -11,13 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: cargo-bins/cargo-binstall@main
     - name: Install mdBook and mdBook-KaTeX
-      run: cargo binstall -y mdbook mdbook-katex
+      run: |
+        cargo install mdbook --version 0.5.4
+        cargo install --git https://github.com/SichangHe/mdbook-katex.git --rev f623f031d705ec96e5f747b8c3a910ef1a32734b --locked
     - name: Build
       run: mdbook build
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
+      with:
+        path: _site
 
   deploy:
     name: Deploy the site to GitHub Pages
